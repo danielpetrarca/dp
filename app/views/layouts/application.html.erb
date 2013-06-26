@@ -5,10 +5,48 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+    <script src="js/bootstrap.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="fc-webicons.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+		#bdr{background-color: red;}
+	</style>
+
 </head>
 <body>
 
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+  	<p class="brand"></p>
+  	<a href="/posts"><p class="brand">Daniel Petrarca</p></a>
+ 
+    <ul class="nav">
+      <li><a href="/posts">Blog</a></li>
+      <li><a href="aboutme/index">About me</a></li>
+    </ul>
+  </div>
+</div>
+
+<header>
+	<%= image_tag("banner4.jpg") %>
+</header>
+
 <%= yield %>
+
+<footer>
+    <div class="footer">
+       <div class="container narrow row-fluid" style="background-color: #E6E6E6">
+          <div class="span3 offset8">
+          	<p> &#169 Powered by computers</p>
+          </div>
+          <div class="span1 ">
+          	<%= link_to 'New Post', new_post_path, :confirm => 'Only Dan The Man can create posts. Are you Dan The Man?' %>
+          </div>
+       </div>
+       
+    </div>
+</footer>
 
 </body>
 </html>

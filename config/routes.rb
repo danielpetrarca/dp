@@ -1,8 +1,13 @@
 Dp::Application.routes.draw do
+  get "aboutme/new"
+
+  get "aboutme/create"
+  get "aboutme/index"
+
   root :to => 'posts#index'
 
   resources :posts do
-    resources :comments, :only => [:create]
+    resources :comments
   end
   
 
